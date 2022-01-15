@@ -11,7 +11,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CaseStudy.Infrastructure", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CaseStudy.API", "src\CaseStudy.API\CaseStudy.API.csproj", "{DAE2C72C-75BA-4DDC-A4F5-BD3C4B373334}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common.Logging", "src\Common.Logging\Common.Logging.csproj", "{2240A274-A947-4AC7-98F1-89BC15904DAF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Common.Logging", "src\Common.Logging\Common.Logging.csproj", "{2240A274-A947-4AC7-98F1-89BC15904DAF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CaseStudy.API.Tests", "CaseStudy.API.Tests\CaseStudy.API.Tests.csproj", "{FA730E18-5C2E-4312-B323-3399C7CD97DE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{2240A274-A947-4AC7-98F1-89BC15904DAF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2240A274-A947-4AC7-98F1-89BC15904DAF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2240A274-A947-4AC7-98F1-89BC15904DAF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FA730E18-5C2E-4312-B323-3399C7CD97DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA730E18-5C2E-4312-B323-3399C7CD97DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FA730E18-5C2E-4312-B323-3399C7CD97DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FA730E18-5C2E-4312-B323-3399C7CD97DE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
