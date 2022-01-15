@@ -43,7 +43,7 @@ namespace CaseStudy.Application.Products.Queries.GetProduct
                 return cachedProduct;
             }
 
-            var product = await _productRepository.GetDetailAsync(request.Id);
+            var product = _productRepository.GetDetail(request.Id);
             var productDto = _mapper.Map<ProductDto>(product);
             _cacheService.Set(product.Id, productDto, TimeSpan.FromMinutes(5));
             return productDto;

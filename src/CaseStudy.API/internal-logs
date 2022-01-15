@@ -106,3 +106,44 @@ System.AggregateException: Some services are not able to be constructed (Error w
 2022-01-15 20:23:22.696 +03:00 [INF] Content root path: E:\Private Projects\HepsiburadaCaseStudy\src\CaseStudy.API
 2022-01-15 20:23:22.696 +03:00 [DBG] Hosting started
 2022-01-15 20:23:27.694 +03:00 [ERR] An error occurred at this address. Path:/api/v1/products/61e2ff277334080a30012d21 Error:The object to delete was not found.
+2022-01-15 21:21:44.913 +03:00 [DBG] Hosting starting
+2022-01-15 21:21:45.256 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-01-15 21:21:45.274 +03:00 [INF] Hosting environment: Development
+2022-01-15 21:21:45.279 +03:00 [INF] Content root path: E:\Private Projects\HepsiburadaCaseStudy\src\CaseStudy.API
+2022-01-15 21:21:45.279 +03:00 [DBG] Hosting started
+2022-01-15 21:21:47.833 +03:00 [INF] 
+2022-01-15 21:25:54.175 +03:00 [DBG] Hosting starting
+2022-01-15 21:25:54.545 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-01-15 21:25:54.545 +03:00 [INF] Hosting environment: Development
+2022-01-15 21:25:54.546 +03:00 [INF] Content root path: E:\Private Projects\HepsiburadaCaseStudy\src\CaseStudy.API
+2022-01-15 21:25:54.546 +03:00 [DBG] Hosting started
+2022-01-15 21:25:58.075 +03:00 [INF] 
+2022-01-15 21:30:34.109 +03:00 [DBG] Hosting starting
+2022-01-15 21:30:34.457 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-01-15 21:30:34.476 +03:00 [INF] Hosting environment: Development
+2022-01-15 21:30:34.482 +03:00 [INF] Content root path: E:\Private Projects\HepsiburadaCaseStudy\src\CaseStudy.API
+2022-01-15 21:30:34.482 +03:00 [DBG] Hosting started
+2022-01-15 21:30:34.611 +03:00 [INF] 
+2022-01-15 21:34:43.606 +03:00 [DBG] Hosting starting
+2022-01-15 21:34:43.965 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-01-15 21:34:43.966 +03:00 [INF] Hosting environment: Development
+2022-01-15 21:34:43.967 +03:00 [INF] Content root path: E:\Private Projects\HepsiburadaCaseStudy\src\CaseStudy.API
+2022-01-15 21:34:43.967 +03:00 [DBG] Hosting started
+2022-01-15 21:34:44.105 +03:00 [INF] 
+2022-01-15 21:52:25.205 +03:00 [DBG] Hosting starting
+2022-01-15 21:52:25.621 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-01-15 21:52:25.622 +03:00 [INF] Hosting environment: Development
+2022-01-15 21:52:25.623 +03:00 [INF] Content root path: E:\Private Projects\HepsiburadaCaseStudy\src\CaseStudy.API
+2022-01-15 21:52:25.623 +03:00 [DBG] Hosting started
+2022-01-15 21:52:45.741 +03:00 [INF] 
+2022-01-15 21:53:08.976 +03:00 [INF] 
+2022-01-15 21:56:42.351 +03:00 [INF] 
+2022-01-15 21:57:42.923 +03:00 [INF] 
+2022-01-15 21:57:53.986 +03:00 [ERR] An error occurred at this address. Path:/api/v1/categories/61e318f858571a762cb9a101 Error:A system error has occurred
+2022-01-15 21:59:55.505 +03:00 [DBG] Hosting starting
+2022-01-15 21:59:55.866 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-01-15 21:59:55.867 +03:00 [INF] Hosting environment: Development
+2022-01-15 21:59:55.868 +03:00 [INF] Content root path: E:\Private Projects\HepsiburadaCaseStudy\src\CaseStudy.API
+2022-01-15 21:59:55.868 +03:00 [DBG] Hosting started
+2022-01-15 21:59:56.771 +03:00 [INF] Product 61e318f858571a762cb9a101 is successfully updated.
+2022-01-15 22:00:26.627 +03:00 [INF] Product 61e318f858571a762cb9a101 is successfully deleted.

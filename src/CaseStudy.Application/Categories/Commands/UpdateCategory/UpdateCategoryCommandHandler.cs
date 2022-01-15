@@ -34,7 +34,7 @@ namespace CaseStudy.Application.Categories.Commands.UpdateCategory
                 throw new ValidationException(string.Join(",", validationResult.Errors.Select(x => x.ErrorMessage)));
             }
 
-            await _categoryRepository.CreateAsync(_mapper.Map<Category>(request));
+            await _categoryRepository.UpdateAsync(request.Id, _mapper.Map<Category>(request));
             _logger.LogInformation($"Product {request.Id} is successfully updated.");
             return Unit.Value;
         }

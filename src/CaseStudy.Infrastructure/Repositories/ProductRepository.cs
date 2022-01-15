@@ -12,12 +12,25 @@ namespace CaseStudy.Infrastructure.Repositories
     {
         public ProductRepository(IMongoDbContext context) : base(context) { }
 
-        public async Task<ProductDto> GetDetailAsync(string id)
+        public ProductDto GetDetail(string id)
         {
-            var result = await _dbCollection.Aggregate().Match(x => x.Id == id)
-                .Lookup("Category", "CategoryId", "_id", @as: "Category")
-                .As<ProductDto>()
-                .FirstOrDefaultAsync();
+            var product = _mongoContext.GetCollection<Product>("Product");
+            var category = _mongoContext.GetCollection<Category>("Category");
+
+            var result = (from p in product.AsQueryable()
+                          join c in category.AsQueryable()
+                          on p.CategoryId equals c.Id into joined
+                          where p.Id == id
+                          select new ProductDto
+                          {
+                              Id = p.Id,
+                              Name = p.Name,
+                              Description = p.Description,
+                              CategoryId = joined,
+                              Currency = p.Currency,
+                              Price = p.Price
+                          }).FirstOrDefault();
+
             return result;
         }
 
