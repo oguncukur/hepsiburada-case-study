@@ -1,6 +1,11 @@
 using Common.Logging;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Logging;
+using Serilog;
+using System;
+using System.IO;
 
 namespace CaseStudy.API
 {
@@ -8,15 +13,40 @@ namespace CaseStudy.API
     {
         public static void Main(string[] args)
         {
-            CreateHostBuilder(args).Build().Run();
+            try
+            {
+                Log.Logger = new LoggerConfiguration().CreateLogger();
+                Log.Information("Service starting");
+                CreateHostBuilder(args).Build().Run();
+            }
+            catch (Exception ex)
+            {
+                Log.Error(ex, "API Stopped because of exception");
+            }
+            finally
+            {
+                Log.CloseAndFlush();
+            }
         }
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
-            Host.CreateDefaultBuilder(args)
+             Host.CreateDefaultBuilder(args)
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
-                    webBuilder.UseStartup<Startup>()
-                    .UseLogging("CaseStudy.API");
+                    webBuilder.UseContentRoot(Directory.GetCurrentDirectory())
+                           .ConfigureLogging(logging =>
+                           {
+                               logging.ClearProviders();
+                           })
+                           .ConfigureAppConfiguration((hostingContext, config) =>
+                           {
+                               var root = config.SetBasePath(Directory.GetCurrentDirectory())
+                                   .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
+                                   .AddJsonFile($"appsettings.{hostingContext.HostingEnvironment.EnvironmentName}.json", optional: true, reloadOnChange: true)
+                                   .AddEnvironmentVariables().Build();
+                           })
+                           .UseStartup<Startup>()
+                           .UseLogging("CaseStudy.API");
                 });
     }
 }

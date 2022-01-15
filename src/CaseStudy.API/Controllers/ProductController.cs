@@ -37,7 +37,7 @@ namespace CaseStudy.API.Controllers
         public async Task<IActionResult> GetAsync(string id)
         {
             _logger.LogInformation("");//Loglama at
-            var query = new GetProductQuery() { Id = id };
+            var query = new GetProductQuery(id);
             var product = await _mediator.Send(query);
             if (product == null)
             {
@@ -59,7 +59,7 @@ namespace CaseStudy.API.Controllers
         {
             _logger.LogInformation("");//Loglama at
             var result = await _mediator.Send(command);
-            return Ok(result);
+            return CreatedAtRoute("GetProductById", new { version = "1", id = result.Id }, result);
         }
 
         /// <summary>
@@ -74,7 +74,7 @@ namespace CaseStudy.API.Controllers
         public async Task<IActionResult> UpdateAsync([FromBody] UpdateProductCommand command)
         {
             await _mediator.Send(command);
-            return NoContent();
+            return Ok();
         }
 
         /// <summary>
@@ -90,7 +90,7 @@ namespace CaseStudy.API.Controllers
         {
             var command = new DeleteProductCommand(id);
             await _mediator.Send(command);
-            return NoContent();
+            return Ok();
         }
     }
 }

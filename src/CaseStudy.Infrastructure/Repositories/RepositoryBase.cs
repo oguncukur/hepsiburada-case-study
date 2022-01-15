@@ -1,4 +1,5 @@
-﻿using MongoDB.Driver;
+﻿using System;
+using MongoDB.Driver;
 using System.Threading.Tasks;
 using CaseStudy.Domain.Common;
 using CaseStudy.Application.Repository;
@@ -24,17 +25,25 @@ namespace CaseStudy.Infrastructure.Repositories
 
         public async Task<T> GetAsync(string id)
         {
-            return await _dbCollection.FindAsync(entity => entity.Id == id).GetAwaiter().GetResult().FirstOrDefaultAsync();//kategori ile beraber gelmesi lazım
+            return await _dbCollection.FindAsync(entity => entity.Id == id).GetAwaiter().GetResult().FirstOrDefaultAsync();
         }
 
         public async Task UpdateAsync(string id, T entity)
         {
-            await _dbCollection.ReplaceOneAsync(entity => entity.Id == id, entity);
+            var result = await _dbCollection.ReplaceOneAsync(entity => entity.Id == id, entity);
+            if (result.MatchedCount.Equals(0))
+            {
+                throw new ArgumentException("The object to update was not found.");
+            }
         }
 
         public async Task RemoveAsync(string id)
         {
-            await _dbCollection.DeleteOneAsync(entity => entity.Id == id);
+            var result = await _dbCollection.DeleteOneAsync(entity => entity.Id == id);
+            if (result.DeletedCount.Equals(0))
+            {
+                throw new ArgumentException("The object to delete was not found.");
+            }
         }
     }
 }

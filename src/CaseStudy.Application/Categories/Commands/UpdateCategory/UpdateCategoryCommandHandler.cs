@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using CaseStudy.Application.Repository;
 using CaseStudy.Domain.Entities;
+using FluentValidation;
 using MediatR;
 using Microsoft.Extensions.Logging;
 using System;
@@ -30,7 +31,7 @@ namespace CaseStudy.Application.Categories.Commands.UpdateCategory
             if (!validationResult.IsValid)
             {
                 _logger.LogError("Update request model is not valid. Errors: {0}", string.Join(",", validationResult.Errors.Select(x => x.ErrorMessage)));
-                throw new Exception();
+                throw new ValidationException(string.Join(",", validationResult.Errors.Select(x => x.ErrorMessage)));
             }
 
             await _categoryRepository.CreateAsync(_mapper.Map<Category>(request));

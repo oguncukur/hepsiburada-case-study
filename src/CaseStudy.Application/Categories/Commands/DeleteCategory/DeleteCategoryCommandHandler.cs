@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using CaseStudy.Application.Repository;
 using Microsoft.Extensions.Logging;
 using System.Linq;
+using FluentValidation;
 
 namespace CaseStudy.Application.Categories.Commands.DeleteCategory
 {
@@ -25,8 +26,7 @@ namespace CaseStudy.Application.Categories.Commands.DeleteCategory
             var validationResult = await validator.ValidateAsync(request, cancellationToken);
             if (!validationResult.IsValid)
             {
-                _logger.LogError("Delete request model is not valid. Errors: {0}", string.Join(",", validationResult.Errors.Select(x => x.ErrorMessage)));
-                throw new Exception();
+                throw new ValidationException(string.Join(",", validationResult.Errors.Select(x => x.ErrorMessage)));
             }
 
             await _categoryRepository.RemoveAsync(request.Id);

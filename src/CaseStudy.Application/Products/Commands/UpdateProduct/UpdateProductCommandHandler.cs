@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using CaseStudy.Application.Repository;
 using CaseStudy.Domain.Entities;
+using FluentValidation;
 using MediatR;
 using Microsoft.Extensions.Logging;
 using System;
@@ -30,10 +31,10 @@ namespace CaseStudy.Application.Products.Commands.UpdateProduct
             if (!validationResult.IsValid)
             {
                 _logger.LogError("Update request model is not valid. Errors: {0}", string.Join(",", validationResult.Errors.Select(x => x.ErrorMessage)));
-                throw new Exception();
+                throw new ValidationException(string.Join(",", validationResult.Errors.Select(x => x.ErrorMessage)));
             }
 
-            await _productRepository.CreateAsync(_mapper.Map<Product>(request));
+            await _productRepository.UpdateAsync(request.Id, _mapper.Map<Product>(request));
             _logger.LogInformation($"Product {request.Id} is successfully updated.");
             return Unit.Value;
         }

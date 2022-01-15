@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using CaseStudy.Application.Infrastructure;
 using CaseStudy.Application.Repository;
+using FluentValidation;
 using MediatR;
 using Microsoft.Extensions.Logging;
 using System;
@@ -32,7 +33,7 @@ namespace CaseStudy.Application.Products.Queries.GetProduct
             if (!validationResult.IsValid)
             {
                 _logger.LogError("Get request model is not valid. Errors: {0}", string.Join(",", validationResult.Errors.Select(x => x.ErrorMessage)));
-                throw new Exception();
+                throw new ValidationException(string.Join(",", validationResult.Errors.Select(x => x.ErrorMessage)));
             }
 
             var cachedProduct = _cacheService.Get<ProductDto>(request.Id);
@@ -42,7 +43,7 @@ namespace CaseStudy.Application.Products.Queries.GetProduct
                 return cachedProduct;
             }
 
-            var product = await _productRepository.GetWithCategoryAsync(request.Id);
+            var product = await _productRepository.GetDetailAsync(request.Id);
             var productDto = _mapper.Map<ProductDto>(product);
             _cacheService.Set(product.Id, productDto, TimeSpan.FromMinutes(5));
             return productDto;

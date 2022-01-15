@@ -7,7 +7,7 @@ namespace CaseStudy.Application.Repository
 {
     public interface IProductRepository : IAsyncRepository<Product>
     {
-        Task<ProductDto> GetWithCategoryAsync(string id);
+        Task<ProductDto> GetDetailAsync(string id);
         Task<IEnumerable<Product>> GetProductsByNameAsync(string name);
     }
 }

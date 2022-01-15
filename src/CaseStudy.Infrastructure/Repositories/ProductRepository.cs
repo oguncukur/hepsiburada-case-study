@@ -12,7 +12,7 @@ namespace CaseStudy.Infrastructure.Repositories
     {
         public ProductRepository(IMongoDbContext context) : base(context) { }
 
-        public async Task<ProductDto> GetWithCategoryAsync(string id)
+        public async Task<ProductDto> GetDetailAsync(string id)
         {
             var result = await _dbCollection.Aggregate().Match(x => x.Id == id)
                 .Lookup("Category", "CategoryId", "_id", @as: "Category")

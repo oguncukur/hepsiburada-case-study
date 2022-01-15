@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using CaseStudy.Application.Repository;
+using FluentValidation;
 using MediatR;
 using Microsoft.Extensions.Logging;
 using System;
@@ -29,7 +30,7 @@ namespace CaseStudy.Application.Categories.Queries.GetCategory
             if (!validationResult.IsValid)
             {
                 _logger.LogError("Get request model is not valid. Errors: {0}", string.Join(",", validationResult.Errors.Select(x => x.ErrorMessage)));
-                throw new Exception();
+                throw new ValidationException(string.Join(",", validationResult.Errors.Select(x => x.ErrorMessage)));
             }
 
             var product = await _categoryRepository.GetAsync(request.Id);

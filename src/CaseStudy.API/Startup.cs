@@ -69,7 +69,7 @@ namespace CaseStudy.API
 
             app.UseRouting();
             app.UseAuthorization();
-
+            app.UseMiddleware<ExceptionHandlerMiddleware>();
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();

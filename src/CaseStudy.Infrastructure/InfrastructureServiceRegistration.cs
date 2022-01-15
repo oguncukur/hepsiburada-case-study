@@ -17,6 +17,7 @@ namespace CaseStudy.Infrastructure
             services.AddScoped<ICategoryRepository, CategoryRepository>();
             services.AddScoped<ICacheService, CacheService>();
             services.AddScoped<IMongoDbContext, MongoDbContext>();
+            services.AddTransient<ExceptionHandlerMiddleware>();
             return services;
         }
 

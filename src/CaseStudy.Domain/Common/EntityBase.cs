@@ -6,7 +6,7 @@ namespace CaseStudy.Domain.Common
     {
         [BsonId]
         [BsonRepresentation(MongoDB.Bson.BsonType.ObjectId)]
-        public string Id { get; protected set; }
+        public string Id { get; set; }
 
         //public string CreatedBy { get; set; }
         //public DateTime CreatedDate { get; set; }

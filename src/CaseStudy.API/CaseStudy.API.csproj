@@ -13,9 +13,9 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<ProjectReference Include="..\..\Common.Logging\Common.Logging.csproj" />
 		<ProjectReference Include="..\CaseStudy.Application\CaseStudy.Application.csproj" />
 		<ProjectReference Include="..\CaseStudy.Infrastructure\CaseStudy.Infrastructure.csproj" />
+		<ProjectReference Include="..\Common.Logging\Common.Logging.csproj" />
 	</ItemGroup>
 
 </Project>

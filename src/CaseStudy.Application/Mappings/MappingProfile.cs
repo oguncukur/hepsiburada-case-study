@@ -5,6 +5,7 @@ using CaseStudy.Application.Products.Commands.UpdateProduct;
 using CaseStudy.Application.Categories.Commands.PostCategory;
 using CaseStudy.Application.Categories.Commands.UpdateCategory;
 using CaseStudy.Application.Products.Queries.GetProduct;
+using MongoDB.Bson;
 
 namespace CaseStudy.Application.Mappings
 {
@@ -13,7 +14,7 @@ namespace CaseStudy.Application.Mappings
         public MappingProfile()
         {
             CreateMap<Product, ProductDto>().ReverseMap();
-            CreateMap<PostProductCommand, Product>().ReverseMap();
+            CreateMap<PostProductCommand, Product>().BeforeMap((s, d) => d.Id = ObjectId.GenerateNewId().ToString());
             CreateMap<UpdateProductCommand, Product>().ReverseMap();
             CreateMap<PostCategoryCommand, Category>().ReverseMap();
             CreateMap<UpdateCategoryCommand, Category>().ReverseMap();
