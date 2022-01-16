@@ -23,6 +23,8 @@ DDD and CQRS patterns were applied in the project.
 
 **Kibana:** http://localhost:5602/
 
+## Flowchart
+
 ## Without EventBus
 ![CaseStudyWithoutEventBus drawio](https://user-images.githubusercontent.com/31844234/149674855-ef8c9112-44dc-4b21-aa91-dbcb9b310fac.png)
 
