@@ -1,5 +1,5 @@
 FROM mcr.microsoft.com/dotnet/sdk:5.0-alpine as build-ENV
-#COPY /Case.Shared ./app/Case.Shared
+COPY /CaseStudy.Logging ./app/CaseStudy.Logging
 COPY /CaseStudy.Domain ./app/CaseStudy.Domain
 COPY /CaseStudy.Infrastructure ./app/CaseStudy.Infrastructure
 COPY /CaseStudy.Application ./app/CaseStudy.Application
