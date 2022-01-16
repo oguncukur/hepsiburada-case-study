@@ -8,13 +8,13 @@
 
 docker-compose up -d
 
-Api: http://localhost:19450/
+**Api:** http://localhost:19450/
 
-Mongo Express: http://localhost:8081/
-		-username: admin
-		-password: case
+**Mongo Express:** http://localhost:8081/
+		* **username:** admin
+		* **password:** case
 
-Kibana: http://localhost:5602/
+**Kibana:** http://localhost:5602/
 
 ## Without EventBus
 ![CaseStudyWithoutEventBus drawio](https://user-images.githubusercontent.com/31844234/149674855-ef8c9112-44dc-4b21-aa91-dbcb9b310fac.png)
