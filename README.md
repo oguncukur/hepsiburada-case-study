@@ -7,9 +7,9 @@ DDD and CQRS patterns were applied in the project.
 
 ## Requirements
 
-* [Visual Studio or VS Code]
-* [.Net Core 5 or later]
-* [Docker Desktop]
+* Visual Studio or VS Code
+* .Net Core 5 or later
+* Docker Desktop
 
 ## Run The Project
 
