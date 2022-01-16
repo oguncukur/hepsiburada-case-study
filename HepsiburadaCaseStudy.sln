@@ -13,7 +13,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CaseStudy.API", "src\CaseSt
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Common.Logging", "src\Common.Logging\Common.Logging.csproj", "{2240A274-A947-4AC7-98F1-89BC15904DAF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CaseStudy.API.Tests", "CaseStudy.API.Tests\CaseStudy.API.Tests.csproj", "{FA730E18-5C2E-4312-B323-3399C7CD97DE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CaseStudy.API.Tests", "src\CaseStudy.API.Tests\CaseStudy.API.Tests.csproj", "{FA730E18-5C2E-4312-B323-3399C7CD97DE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
