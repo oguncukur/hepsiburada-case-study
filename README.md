@@ -1,3 +1,12 @@
+## Requirements
+You will need the following tools:
+
+* [Visual Studio]
+* [.Net Core 5 or later]
+* [Docker Desktop]
+
+## Run The Project
+
 docker-compose up -d
 
 Api: http://localhost:19450/
