@@ -34,7 +34,7 @@ namespace CaseStudy.API.Tests.Model
         {
             Add(new UpdateProductCommand
             {
-                Id = "61e2ff277334080a30012d24",
+                Id = "",
                 Name = "Döner",
                 Description = "Türk Mutfağı",
                 CategoryId = "",
