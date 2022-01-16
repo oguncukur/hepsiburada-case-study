@@ -1,6 +1,6 @@
 ## Requirements
 
-* [Visual Studio]
+* [Visual Studio or VS Code]
 * [.Net Core 5 or later]
 * [Docker Desktop]
 
@@ -11,8 +11,8 @@ docker-compose up -d
 Api: http://localhost:19450/
 
 Mongo Express: http://localhost:8081/
-			-username: admin
-			-password: case
+		-username: admin
+		-password: case
 
 Kibana: http://localhost:5602/
 
