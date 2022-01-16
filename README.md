@@ -6,7 +6,7 @@
 
 ## Run The Project
 
-docker-compose up -d
+**docker-compose up -d**
 
 **Api:** http://localhost:19450/
 
