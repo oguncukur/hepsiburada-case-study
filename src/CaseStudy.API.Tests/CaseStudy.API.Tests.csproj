@@ -21,8 +21,8 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <ProjectReference Include="..\src\CaseStudy.API\CaseStudy.API.csproj" />
-	  <ProjectReference Include="..\src\CaseStudy.Application\CaseStudy.Application.csproj" />
+	  <ProjectReference Include="..\CaseStudy.API\CaseStudy.API.csproj" />
+	  <ProjectReference Include="..\CaseStudy.Application\CaseStudy.Application.csproj" />
 	</ItemGroup>
 
 </Project>
