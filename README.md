@@ -7,21 +7,23 @@ DDD and CQRS patterns were applied in the project.
 
 ## Requirements
 
-* [Visual Studio or VS Code]
-* [.Net Core 5 or later]
-* [Docker Desktop]
+* Visual Studio or VS Code
+* .Net Core 5 or later
+* Docker Desktop
 
 ## Run The Project
 
 **docker-compose up -d**
 
-**Api:** http://localhost:19450/
+**Api:** http://localhost:5000/
 
 **Mongo Express:** http://localhost:8081/
 * **Username:** admin
 * **Password:** case
 
 **Kibana:** http://localhost:5602/
+
+## Flowchart
 
 ## Without EventBus
 ![CaseStudyWithoutEventBus drawio](https://user-images.githubusercontent.com/31844234/149674855-ef8c9112-44dc-4b21-aa91-dbcb9b310fac.png)
