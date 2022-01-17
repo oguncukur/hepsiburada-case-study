@@ -23,7 +23,7 @@ namespace CaseStudy.API.Tests
             _client = fixture.CreateClient(new WebApplicationFactoryClientOptions { BaseAddress = new Uri("http://localhost:5000") });
         }
 
-        [Theory, InlineData(new object[] { "61e52282f9152c9a3b00d82c" })]
+        [Theory, InlineData(new object[] { "" })]
         public async Task GetAsync_ShouldReturnProduct_WhenTakesId(string id)
         {
             var response = await _client.GetAsync("api/v1/products" + "/" + id);
@@ -50,7 +50,7 @@ namespace CaseStudy.API.Tests
             Assert.Equal(System.Net.HttpStatusCode.OK, response.StatusCode);
         }
 
-        [Theory, InlineData(new object[] { "61e523ef4945fcd33da0165a" })]
+        [Theory, InlineData(new object[] { "" })]
         public async Task DeleteAsync_ShouldReturnProduct_WhenTakesParameters(string id)
         {
             var response = await _client.DeleteAsync("api/v1/products" + "/" + id);
