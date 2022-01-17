@@ -33,8 +33,8 @@ namespace CaseStudy.Application.Categories.Queries.GetCategory
                 throw new ValidationException(string.Join(",", validationResult.Errors.Select(x => x.ErrorMessage)));
             }
 
-            var product = await _categoryRepository.GetAsync(request.Id);
-            return _mapper.Map<CategoryDto>(product);
+            var category = await _categoryRepository.GetAsync(request.Id);
+            return _mapper.Map<CategoryDto>(category);
         }
     }
 }

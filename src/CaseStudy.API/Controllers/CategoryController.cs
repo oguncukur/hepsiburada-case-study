@@ -35,13 +35,16 @@ namespace CaseStudy.API.Controllers
         [ProducesResponseType(500, Type = typeof(Exception))]
         public async Task<IActionResult> GetAsync(string id)
         {
-            _logger.LogInformation("");//Loglama at
+            _logger.LogInformation("");
             var query = new GetCategoryQuery(id);
+            _logger.LogTrace("");
             var category = await _mediator.Send(query);
             if (category == null)
             {
+                _logger.LogWarning("");
                 return NotFound();
             }
+            _logger.LogInformation("");
             return Ok(category);
         }
 
@@ -56,8 +59,9 @@ namespace CaseStudy.API.Controllers
         [ProducesResponseType(500, Type = typeof(Exception))]
         public async Task<IActionResult> PostAsync([FromBody] PostCategoryCommand command)
         {
-            _logger.LogInformation("");//Loglama at
+            _logger.LogInformation("");
             var result = await _mediator.Send(command);
+            _logger.LogInformation("");
             return CreatedAtRoute("GetCategoryById", new { version = "1", id = result.Id }, result);
         }
 
@@ -74,7 +78,9 @@ namespace CaseStudy.API.Controllers
         [ProducesDefaultResponseType]
         public async Task<IActionResult> UpdateAsync([FromBody] UpdateCategoryCommand command)
         {
+            _logger.LogInformation("");
             await _mediator.Send(command);
+            _logger.LogInformation("");
             return Ok();
         }
 
@@ -90,8 +96,10 @@ namespace CaseStudy.API.Controllers
         [ProducesResponseType(500, Type = typeof(Exception))]
         public async Task<IActionResult> DeleteAsync(string id)
         {
+            _logger.LogInformation("");
             var command = new DeleteCategoryCommand(id);
             await _mediator.Send(command);
+            _logger.LogInformation("");
             return Ok();
         }
     }

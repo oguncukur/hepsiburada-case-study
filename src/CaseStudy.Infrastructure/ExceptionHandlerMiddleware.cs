@@ -37,10 +37,9 @@ namespace CaseStudy.Infrastructure
             {
                 var _ when exception is ValidationException => new Tuple<int, string>((int)HttpStatusCode.BadRequest, exception.Message),
                 var _ when exception is ArgumentException => new Tuple<int, string>((int)HttpStatusCode.NotFound, exception.Message),
-                _ => new Tuple<int, string>((int)HttpStatusCode.InternalServerError, "A system error has occurred"),
+                _ => new Tuple<int, string>((int)HttpStatusCode.InternalServerError, exception.Message),
             };
             return exceptionDetail;
         }
-
     }
 }

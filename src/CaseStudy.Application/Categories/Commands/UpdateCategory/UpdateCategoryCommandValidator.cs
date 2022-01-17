@@ -2,7 +2,7 @@
 
 namespace CaseStudy.Application.Categories.Commands.UpdateCategory
 {
-    public class UpdateCategoryCommandValidator : AbstractValidator<UpdateCategoryCommand>
+    internal class UpdateCategoryCommandValidator : AbstractValidator<UpdateCategoryCommand>
     {
         public UpdateCategoryCommandValidator()
         {

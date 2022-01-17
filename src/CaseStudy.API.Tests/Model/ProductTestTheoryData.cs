@@ -12,7 +12,7 @@ namespace CaseStudy.API.Tests.Model
             {
                 Name = "Döner",
                 Description = "Türk Mutfağı",
-                CategoryId = "",
+                CategoryId = "61e515a7c823533f38d63d87",
                 Currency = "TL",
                 Price = 25.90m
             });
@@ -21,7 +21,6 @@ namespace CaseStudy.API.Tests.Model
             {
                 Name = "Kebap",
                 Description = "Türk Mutfağı",
-                CategoryId = "",
                 Currency = "TL",
                 Price = 40.50m
             });
@@ -34,10 +33,10 @@ namespace CaseStudy.API.Tests.Model
         {
             Add(new UpdateProductCommand
             {
-                Id = "",
+                Id = "61e519cf9c2528a0a0540d01",
                 Name = "Döner",
                 Description = "Türk Mutfağı",
-                CategoryId = "",
+                CategoryId = "61e515a7c823533f38d63d87",
                 Currency = "TL",
                 Price = 25.90m
             });

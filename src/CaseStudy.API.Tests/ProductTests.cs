@@ -2,6 +2,7 @@ using CaseStudy.API.Tests.Model;
 using CaseStudy.Application.Products.Commands.PostProduct;
 using CaseStudy.Application.Products.Commands.UpdateProduct;
 using CaseStudy.Application.Products.Queries.GetProduct;
+using CaseStudy.Domain.Entities;
 using Microsoft.AspNetCore.Mvc.Testing;
 using Newtonsoft.Json;
 using System;
@@ -18,10 +19,11 @@ namespace CaseStudy.API.Tests
 
         public ProductTests(WebApplicationFactory<Startup> fixture)
         {
-            _client = fixture.CreateClient(new WebApplicationFactoryClientOptions { BaseAddress = new Uri("http://localhost:19450") });
+            //_client = fixture.CreateClient(new WebApplicationFactoryClientOptions { BaseAddress = new Uri("http://localhost:19450") });
+            _client = fixture.CreateClient(new WebApplicationFactoryClientOptions { BaseAddress = new Uri("http://localhost:5000") });
         }
 
-        [Theory, InlineData(new object[] { "61e2ff277334080a30012d24" })]
+        [Theory, InlineData(new object[] { "61e52282f9152c9a3b00d82c" })]
         public async Task GetAsync_ShouldReturnProduct_WhenTakesId(string id)
         {
             var response = await _client.GetAsync("api/v1/products" + "/" + id);
@@ -35,8 +37,8 @@ namespace CaseStudy.API.Tests
             var json = JsonConvert.SerializeObject(parameter);
             var data = new StringContent(json, Encoding.UTF8, "application/json");
             var response = await _client.PostAsync("api/v1/products", data);
-            var product = JsonConvert.DeserializeObject<ProductDto>(await response.Content.ReadAsStringAsync());
-            Assert.IsType<ProductDto>(product);
+            var product = JsonConvert.DeserializeObject<Product>(await response.Content.ReadAsStringAsync());
+            Assert.IsType<Product>(product);
         }
 
         [Theory, ClassData(typeof(UpdateProductTestTheoryData))]
@@ -48,7 +50,7 @@ namespace CaseStudy.API.Tests
             Assert.Equal(System.Net.HttpStatusCode.OK, response.StatusCode);
         }
 
-        [Theory, InlineData(new object[] { "61e2ff277334080a30012d24" })]
+        [Theory, InlineData(new object[] { "61e523ef4945fcd33da0165a" })]
         public async Task DeleteAsync_ShouldReturnProduct_WhenTakesParameters(string id)
         {
             var response = await _client.DeleteAsync("api/v1/products" + "/" + id);

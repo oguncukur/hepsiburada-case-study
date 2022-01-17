@@ -1,7 +1,6 @@
 using CaseStudy.Application;
 using CaseStudy.Infrastructure;
 using HealthChecks.UI.Client;
-using MediatR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 using Microsoft.AspNetCore.Hosting;

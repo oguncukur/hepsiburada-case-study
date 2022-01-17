@@ -35,13 +35,16 @@ namespace CaseStudy.API.Controllers
         [ProducesResponseType(500, Type = typeof(Exception))]
         public async Task<IActionResult> GetAsync(string id)
         {
-            _logger.LogInformation("");//Loglama at
+            _logger.LogInformation("");
             var query = new GetProductQuery(id);
+            _logger.LogTrace("");
             var product = await _mediator.Send(query);
             if (product == null)
             {
+                _logger.LogWarning("");
                 return NotFound();
             }
+            _logger.LogInformation("");
             return Ok(product);
         }
 
@@ -56,8 +59,9 @@ namespace CaseStudy.API.Controllers
         [ProducesResponseType(500, Type = typeof(Exception))]
         public async Task<IActionResult> PostAsync([FromBody] PostProductCommand command)
         {
-            _logger.LogInformation("");//Loglama at
+            _logger.LogInformation("");
             var result = await _mediator.Send(command);
+            _logger.LogInformation("");
             return CreatedAtRoute("GetProductById", new { version = "1", id = result.Id }, result);
         }
 
@@ -72,7 +76,9 @@ namespace CaseStudy.API.Controllers
         [ProducesResponseType(500, Type = typeof(Exception))]
         public async Task<IActionResult> UpdateAsync([FromBody] UpdateProductCommand command)
         {
+            _logger.LogInformation("");
             await _mediator.Send(command);
+            _logger.LogInformation("");
             return Ok();
         }
 
@@ -87,8 +93,10 @@ namespace CaseStudy.API.Controllers
         [ProducesResponseType(500, Type = typeof(Exception))]
         public async Task<IActionResult> DeleteAsync(string id)
         {
+            _logger.LogInformation("");
             var command = new DeleteProductCommand(id);
             await _mediator.Send(command);
+            _logger.LogInformation("");
             return Ok();
         }
     }

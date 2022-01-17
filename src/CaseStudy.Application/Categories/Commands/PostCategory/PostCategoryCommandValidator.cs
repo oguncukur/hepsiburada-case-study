@@ -2,7 +2,7 @@
 
 namespace CaseStudy.Application.Categories.Commands.PostCategory
 {
-    public class PostCategoryCommandValidator : AbstractValidator<PostCategoryCommand>
+    internal class PostCategoryCommandValidator : AbstractValidator<PostCategoryCommand>
     {
         public PostCategoryCommandValidator()
         {
