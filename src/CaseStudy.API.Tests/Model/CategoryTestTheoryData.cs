@@ -28,7 +28,7 @@ namespace CaseStudy.API.Tests.Model
         {
             Add(new UpdateCategoryCommand
             {
-                Id = "",
+                Id = "61e7df9f19009511be6677a2",
                 Name = "Meksika Mutfağı",
                 Description = "Meksika mutfağına ait lezzetler",
             });

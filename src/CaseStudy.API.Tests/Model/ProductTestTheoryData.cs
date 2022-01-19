@@ -33,10 +33,10 @@ namespace CaseStudy.API.Tests.Model
         {
             Add(new UpdateProductCommand
             {
-                Id = "",
+                Id = "61e7e0a072535817a8fed13a",
                 Name = "Döner",
                 Description = "Türk Mutfağı",
-                CategoryId = "61e515a7c823533f38d63d87",
+                CategoryId = "61e7df9f19009511be6677a2",
                 Currency = "TL",
                 Price = 25.90m
             });

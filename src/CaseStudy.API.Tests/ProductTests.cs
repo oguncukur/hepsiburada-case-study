@@ -23,7 +23,7 @@ namespace CaseStudy.API.Tests
             _client = fixture.CreateClient(new WebApplicationFactoryClientOptions { BaseAddress = new Uri("http://localhost:5000") });
         }
 
-        [Theory, InlineData(new object[] { "" })]
+        [Theory, InlineData(new object[] { "61e7e0a072535817a8fed139" })]
         public async Task GetAsync_ShouldReturnProduct_WhenTakesId(string id)
         {
             var response = await _client.GetAsync("api/v1/products" + "/" + id);
@@ -42,7 +42,7 @@ namespace CaseStudy.API.Tests
         }
 
         [Theory, ClassData(typeof(UpdateProductTestTheoryData))]
-        public async Task PutAsync_ShouldReturnProduct_WhenTakesParameters(UpdateProductCommand parameter)
+        public async Task PutAsync_ShouldReturnOk_WhenTakesParameters(UpdateProductCommand parameter)
         {
             var json = JsonConvert.SerializeObject(parameter);
             var data = new StringContent(json, Encoding.UTF8, "application/json");
@@ -50,8 +50,8 @@ namespace CaseStudy.API.Tests
             Assert.Equal(System.Net.HttpStatusCode.OK, response.StatusCode);
         }
 
-        [Theory, InlineData(new object[] { "" })]
-        public async Task DeleteAsync_ShouldReturnProduct_WhenTakesParameters(string id)
+        [Theory, InlineData(new object[] { "61e7e0a072535817a8fed13a" })]
+        public async Task DeleteAsync_ShouldReturnOk_WhenTakesParameters(string id)
         {
             var response = await _client.DeleteAsync("api/v1/products" + "/" + id);
             Assert.Equal(System.Net.HttpStatusCode.OK, response.StatusCode);
