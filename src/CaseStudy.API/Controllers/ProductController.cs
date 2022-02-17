@@ -62,7 +62,7 @@ namespace CaseStudy.API.Controllers
             _logger.LogInformation("");
             var result = await _mediator.Send(command);
             _logger.LogInformation("");
-            return CreatedAtRoute("GetProductById", new { version = "1", id = result.Id }, result);
+            return Created(string.Empty, result);
         }
 
         /// <summary>
